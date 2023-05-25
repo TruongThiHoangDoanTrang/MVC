@@ -1,40 +1,23 @@
-﻿@model IEnumerable<BookStore.Models.SACH>
+﻿
 @{
     ViewBag.Title = "SPTheoNXB";
-    Layout = "~/Views/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+<h2 style="text-align: Center; color: blue">SÁCH THEO NHÀ SẢN XUẤT</h2>
+@foreach (var sach in Model)
+{
 
-<h3 style="text-align:center;color:red">SÁCH THEO NHÀ XUẤT BẢN</h3>
-
-<div class="row">
-    @foreach (var sach in Model)
-    {
-        <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
-                <a href="@Url.Action("Details","BookStore", new {id = sach.Masach})"></a>
-                <img alt="@sach.Tensach" src="~/Hinhsanpham/@sach.Anhbia" width="200" />
-                <div>
-                    <br />
-                    <h4 style="text-align:center">
-                        @sach.Tensach
-                    </h4>
-                    <p></p>
-                </div>
-                <div class="ratings">
-                    <p class="pull-right">15 reviews</p>
-                    <p>
-                        <span class="glyphicon glyphicon-star"> </span>
-                        <span class="glyphicon glyphicon-star"> </span>
-                        <span class="glyphicon glyphicon-star"> </span>
-                        <span class="glyphicon glyphicon-star"> </span>
-                        <span class="glyphicon glyphicon-star"> </span>
-                    </p>
-                </div>
-
-            </div>
+    <div class="prod_box">
+        <div class="center_prod_box">
+            <a href="@Url.Action("SPTheoNXB", "BookStore", new {id = sach.Masach})">
+                <img alt="@sach.Tensach" src="~/HinhSanPham/@sach.Anhbia" width="165" height="113" border="0" class="oferta_img" />
+                <!--<span>@sach.Tensach</span>-->
+            </a>
+            <div class="product_title"><a>@sach.Tensach</a></div>
         </div>
+        <div class="prod_details_tab"> <a href="http://all-free-download.com/free-website-templates/" class="prod_buy">Add to Cart</a> <a href="http://all-free-download.com/free-website-templates/" class="prod_details">Details</a> </div>
+    </div>
 
-    }
-</div>
+}
 

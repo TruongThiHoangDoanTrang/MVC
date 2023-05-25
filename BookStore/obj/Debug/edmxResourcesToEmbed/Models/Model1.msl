@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLBANSACHModelStoreContainer" CdmEntityContainer="QLBANSACHEntities">
+  <EntityContainerMapping StorageEntityContainer="QLBANSACHModelStoreContainer" CdmEntityContainer="QLBANSACHEntities2">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="QLBANSACHModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="UserAdmin" ColumnName="UserAdmin" />
+          <ScalarProperty Name="PassAdmin" ColumnName="PassAdmin" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CHITIETDONTHANGs">
       <EntityTypeMapping TypeName="QLBANSACHModel.CHITIETDONTHANG">
         <MappingFragment StoreEntitySet="CHITIETDONTHANG">
